@@ -1,0 +1,54 @@
+{% extends "menu.html" %}
+ 
+{% block title %} Add New Product/Services {% endblock title %}
+ 
+{% block content %}
+<div class="col-md-12">
+    <h4> New Product/Services </h4>  
+ <form method="POST" class="post-form" action="/update/{{product.id}}">  
+   {% csrf_token %}  
+  <div class="container">  
+ <br>  
+  <div class="form-group row">  
+  <label class="col-sm-1 col-form-label"></label>  
+  <div class="col-sm-4">  
+  <h3> Edit Products/Services Details</h3>  
+  </div>  
+   </div>  
+    </div>  
+   <div class="form-group row">  
+  <label class="col-sm-2 col-form-label">Product/Services:</label>  
+  <div class="col-sm-4">  
+   <input type="text" class="form-control" name="product_name" id="id_product_name" required maxlength="100" value="{{ product.product_name }}" />  
+  </div>  
+   </div> 
+   <br> 
+  <div class="form-group row">  
+  <label class="col-sm-2 col-form-label">Product Price:</label>  
+  <div class="col-sm-4">  
+   <input type="text" class="form-control" name="product_price" id="id_product_price" required maxlength="254" value="{{ product.product_price }}" />  
+  </div>  
+   </div> 
+   <br> 
+    <div class="form-group row">  
+        <label class="col-sm-2 col-form-label">Department/Unit:</label>  
+            <div class="col-sm-4">  
+              <input type="text" class="form-control" name="department" id="id_department" required maxlength="15" value="{{ product.department }}" />  
+        </div>  
+    </div>
+   <br>  
+
+
+  <div class="modal-footer">
+    <div>
+      <button type="submit" class="btn btn-success btn-lg">Update</button>  
+    </div>
+    <div>
+      <a href="{% url 'product' %}" class="btn btn-outline-warning"> Back  </a>
+    </div>
+
+  </div>
+   </div>  
+  </div>  
+ </form>  
+{% endblock content %}   

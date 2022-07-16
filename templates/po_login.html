@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+
+    
+    <center><h3 style=" margin-bottom: 0px;"class = 'alert alert-success'>Login as a Admin!</h3></center>
+    <center><h2>Procurement Unit - Lagos State University</h2></center>
+
+
+    <div class="signup-form">
+    <form action="" method="post">
+      {% csrf_token %}
+    
+      <div class="form-group text-center">
+              <label for="username" class="control-label col-xs-4">Username</label>
+              <input type="text" placeholder="Enter username" class="form-control" name="username"> 
+      </div>  
+      <div class="form-group text-center">
+              <label for="exampleInputPassword1" class="control-label col-xs-4">Password</label>
+              <input type="password" placeholder="Enter password" class="form-control" name="password">
+      </div>
+      <div class="form-group text-center">
+        <div class="col-xs-8 col-xs-offset-4">
+          <button type="submit" class="btn btn-success btn-lg" style="border-radius:0px;">Login</button>
+        </div>
+          </div>
+      </form>
+      <div class="text-center">Do not have account? <a href="{% url 'po_signup' %}">Signup here</a></div>
+    </div>
+
+
+{% endblock %}

@@ -1,0 +1,89 @@
+{% extends 'menu.html' %}
+
+{% block content %}
+<div class="col-md-12">
+    <h4>Add New Supplier </h4>
+    <form method="POST" class="post-form" action="/new_supplier">
+        {% csrf_token %}
+        <div class="container">
+            <br>
+            <div class="form-group row">
+                <label class="col-sm-1 col-form-label"></label>
+                <div class="col-sm-4">
+                    <h3> Enter Details </h3>
+                </div>
+            </div>
+            <br>
+
+            <div class="form-group row">
+                <label class="col-sm-2 col-form-label"> <b> Company Name: </b> </label>
+                <div class="col-sm-4">
+                    {{form.company_name}}
+                </div>
+            </div>
+        
+            <br>
+
+            <div class="form-group row">
+                <label class="col-sm-2 col-form-label"> <b> Contact Name: </b></label>
+                <div class="col-sm-4">
+                    {{ form.contact_name}}
+                </div>
+            </div>
+            <br>
+
+            <div class="form-group row">
+                <label class="col-sm-2 col-form-label"> <b> Company's Email: </b>  </label>
+                <div class="col-sm-4">
+                    {{ form.contact_email }}
+                </div>
+            </div>
+            <br>
+
+            <div class="form-group row">
+                <label class="col-sm-2 col-form-label"> <b> Phone Number: </b> </label>
+                <div class="col-sm-4">
+                    {{ form.phone }}
+                </div>
+            </div>
+            <br>
+
+            <div class="form-group row">
+                <label class="col-sm-2 col-form-label"> <b> Alternative Phone Number: </b></label>
+                <div class="col-sm-4">
+                    {{ form.alternative_phone }}
+                </div>
+            </div>
+            <br>
+
+            <div class="form-group row">
+                <label class="col-sm-2 col-form-label"> <b> Company's Website: </b>  </label>
+                <div class="col-sm-4">
+                    {{ form.website }}
+                </div>
+            </div>
+            <br>
+
+            <div class="form-group row">
+                <label class="col-sm-2 col-form-label"> <b> Company's Address: </b> </label>
+                <div class="col-sm-4">
+                    {{ form.address }}
+                </div>
+            </div>
+            <br>
+        
+        <div class="modal-footer">
+            <div>
+                <button type="submit" class="btn btn-primary"> Add New Supplier </button>
+            </div>
+            <div>
+                <a href="{% url 'supplier' %}" class="btn btn-outline-warning"> Back </a>
+            </div>
+        </div>
+
+        </div>
+        </div>
+    </form>
+</div>
+{% endblock %}
+

@@ -1,0 +1,81 @@
+{% extends 'menu.html' %}
+{% block content %}
+<div class="col-md-12">
+    <h4> Edit Supplier Details</h4>  
+ <form method="POST" class="post-form" action="/update_supplier/{{supplier.id}}">  
+   {% csrf_token %}  
+  <div class="container">  
+ <br>  
+  <div class="form-group row">  
+  <label class="col-sm-1 col-form-label"></label>  
+  <div class="col-sm-4">  
+  <h3> Edit Supplier Details</h3>  
+  </div>  
+   </div>  
+    </div>  
+   <div class="form-group row">  
+  <label class="col-sm-2 col-form-label">Company Name:</label>  
+  <div class="col-sm-4">  
+   <input type="text" class="form-control" name="company_name" id="id_company_name" required maxlength="100" value="{{ supplier.company_name }}" />  
+  </div>  
+   </div> 
+   <br> 
+  <div class="form-group row">  
+  <label class="col-sm-2 col-form-label">Contact Name:</label>  
+  <div class="col-sm-4">  
+   <input type="text" class="form-control" name="contact_name" id="id_contact_name" required maxlength="254" value="{{ supplier.contact_name }}" />  
+  </div>  
+   </div> 
+   <br> 
+    <div class="form-group row">  
+        <label class="col-sm-2 col-form-label">Email:</label>  
+            <div class="col-sm-4">  
+              <input type="text" class="form-control" name="contact_email" id="id_contact_email" required maxlength="100" value="{{ supplier.contact_email }}" />  
+        </div>  
+    </div> 
+   <br> 
+   <div class="form-group row">  
+       <label class="col-sm-2 col-form-label">Phone:</label>  
+           <div class="col-sm-4">  
+             <input type="text" class="form-control" name="phone" id="id_phone" required maxlength="100" value="{{ supplier.phone }}" />  
+       </div>  
+   </div>
+  <br> 
+    <div class="form-group row">  
+        <label class="col-sm-2 col-form-label">Alternative Phone:</label>  
+            <div class="col-sm-4">  
+              <input type="text" class="form-control" name="alternative_phone" id="id_alternative_phone" required maxlength="100" value="{{ supplier.alternative_phone }}" />  
+        </div>  
+    </div>
+   <br> 
+    <div class="form-group row">  
+        <label class="col-sm-2 col-form-label">Website:</label>  
+            <div class="col-sm-4">  
+              <input type="text" class="form-control" name="website" id="id_website" required maxlength="100" value="{{ supplier.website }}" />  
+        </div>  
+    </div>
+
+   <br> 
+    <div class="form-group row">  
+        <label class="col-sm-2 col-form-label">Address:</label>  
+            <div class="col-sm-4">  
+              <input type="text" class="form-control" name="address" id="id_address" required maxlength="100" value="{{ supplier.address }}" />  
+        </div>  
+    </div>
+   <br> 
+
+  <div class="modal-footer">
+    <div>
+      <button type="submit" class="btn btn-success btn-lg">Update</button>  
+    </div>
+    <div>
+      <a href="{% url 'supplier' %}" class="btn btn-outline-warning"> Back  </a>
+    </div>
+
+  </div>
+   </div>  
+  </div>  
+ </form>  
+
+
+{% endblock %}

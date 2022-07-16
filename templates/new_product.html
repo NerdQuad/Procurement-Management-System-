@@ -1,0 +1,59 @@
+{% extends 'menu.html' %}
+
+{% block content %}
+<div class="col-md-12">
+    <h4> Add New Products/Services </h4> 
+         
+ <form method="POST" class="post-form" action="/new_product">  
+   {% csrf_token %}  
+  <div class="container">  
+ <br>  
+  <div class="form-group row">  
+  <label class="col-sm-1 col-form-label"></label>  
+  <div class="col-sm-4">  
+  <h3>Enter Details</h3>  
+  </div>  
+   </div>  
+   <br>
+
+   <div class="form-group row">  
+  <label class="col-sm-2 col-form-label">Products/Services:</label>  
+      <div class="col-sm-4">  
+    {{ form.product_name }}  
+  </div>  
+   </div>  
+  
+   <br>
+   <div class="form-group row">  
+  <label class="col-sm-2 col-form-label">Price:</label>  
+  <div class="col-sm-4">  
+    {{ form.product_price }}  
+  </div>  
+   </div>  
+
+  <br>
+  <div class="form-group row">  
+  <label class="col-sm-2 col-form-label">Department/Unit:</label>  
+  <div class="col-sm-4">  
+    {{ form.department }}  
+  </div>  
+   </div> 
+  <div>
+
+    <br>
+
+    <div class="modal-footer">
+      <div>  
+        <button type="submit" class="btn btn-primary">Add Products/Services</button>  
+      </div>
+      <div>
+        <a href="{% url 'product' %}" class="btn btn-outline-warning"> Back</a>
+      </div>
+    </div>
+  </div>
+   </div>  
+  </div>  
+ </form>  
+</div> 
+
+{% endblock %}

@@ -1,0 +1,40 @@
+{% extends 'menu.html' %}
+
+{% block content %}
+<div class="row">
+				<div class="col">
+					<h5>Supplier Information</h5>
+					<hr>
+					<div class="card card-body">
+						<a href="{% url 'supplier_delete' supplier.pk %} " class="btn btn-danger btn-sm btn-block">Delete Supplier </a>
+						<a href="{% url 'supplier'%} " class="btn btn-info btn-sm btn-block">Update Supplier</a>
+						<table class="table table-sm">
+							<tr>
+								<th>Company Name </th>
+                                <th>Company's Representative</th>
+                                <th>Email </th>
+                                <th>Phone</th>
+                                <th>Website </th>
+                                <th>Address</th>
+							</tr>
+							
+			                   <tr>
+                                <td>{{supplier.company_name}}</td>
+                                <td>{{supplier.contact_name}}</td>
+                                <td>{{supplier.contact_email}}</td>
+                                <td>{{supplier.phone}}</td>
+                                <td>{{supplier.website}}</td>
+                                <td>{{supplier.address}}</td>
+			                   </tr>
+						    
+						</table>
+			        </div>
+				</div>
+
+			
+</div>
+   
+        
+			
+
+{% endblock %}

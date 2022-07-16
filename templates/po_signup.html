@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+{% block content %}
+
+{% if form.errors %}
+<div class="alert alert-warning alert-dismissible fade show" role="alert">
+    There was an error with your registration...
+      <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+</div>
+{% endif %}
+
+    <center><h3 style=" margin-bottom: 0px;"class = 'alert alert-success'>Register as an Admin!</h3></center>
+    <center><h2>Procurement Unit - Lagos State University</h2></center>
+
+<div class="signup-form">
+    
+<form action="{% url 'po_signup'%}" method="post">
+    {% csrf_token %}
+    <div class="form-group text-center">
+            <label for="username" class="control-label col-xs-4"> Username </label>
+            <input type="text" placeholder="Enter username" class="form-control" name="username">
+        </div>
+        <div class="form-group text-center">
+            <label for="password1" class="control-label col-xs-4"> Password </label>
+            <input type="password" placeholder="Enter password" class="form-control" name="password1">
+        </div>
+        <div class="form-group text-center">
+            <label for="password2" class="control-label col-xs-4"> Confirm Password </label>
+            <input type="password" placeholder="Confirm password" class="form-control" name="password2">
+        </div>
+            <div class="form-group text-center">
+                <div class="col-xs-8 col-xs-offset-4">
+                <button type="submit" class="btn btn-success btn-lg" style="border-radius:0px;">Sign Up</button>
+        </div>
+    </div>  
+</form>
+
+    <div class="text-center">Already have an account? <a href="{% url 'po_login'%}">Login here</a> 
+    
+    </div>
+    </div>
+
+{% endblock %}

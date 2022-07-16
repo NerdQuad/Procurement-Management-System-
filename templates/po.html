@@ -1,0 +1,204 @@
+{% extends 'menu.html' %}
+{% load static %}
+
+
+
+{% block content %}
+    <div class="col-md-12">
+        <h4> Purchase Order </h4>
+        <div class="table-wrapper">
+            <div class="table-title">
+                <div class="row">
+                    <div class="col-sm-6">
+                        <h2>Manage <b>Purchase Orders</b></h2>
+                    </div>
+                
+                    <div class="col-sm-6">
+                        <a href="{% url 'purchase_order' %}"  class="btn btn-success"><i class="material-icons">&#xE147;</i> <span>Create New Purchase Order</span></a>
+                    </div>
+                </div>
+            </div> 
+        </div>
+        
+<!-- start purchase order  -->
+<div id="printing">
+<div id="header">
+    <a href="#" class="logo"><img src="{% static 'images/logo1.png' %}" alt="" class="imgLogo"></a>
+    <div class="header-right">
+        <div id="title">Purchase Order</div>
+    </div>
+</div>
+<div class="document active">
+    <div class="spreadSheetGroup">
+
+
+        <table class="shipToFrom">
+            <thead style="font-weight:bold">
+                <tr>
+                    <th>To:</th>
+                    <th>Lagos State University Procurement Unit:</th>
+                    <th>PO Details:</th>
+                </tr>
+            </thead>
+
+            <tbody>
+                <tr>
+                    <td contenteditable="true" style="width:33.33%">
+
+                    </td>
+                    <td contenteditable="true" style="width:33.33%">
+                        Lagos State University<br />
+                        Procurement Unit<br />
+                        Ojo, Lagos State. <br />
+                    </td>
+                    <td contenteditable="true" style="width:33.33%; border: 1px solid #000">
+                        PO Number: PO001 <br>
+                        Date Created: 08.06.2022 <br>
+                        Date Issued: 08.06.2022 <br>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+
+        <hr style="visibility:hidden" />
+
+
+        <table class="tableBorder">
+            <thead style="font-weight:bold">
+                <tr>
+                    <th>SPECIFIED BY</th>
+                    <th>DELIVERY LOCATION</th>
+                    <th>DELIVERY DATE</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td contenteditable="true" style="width:33.3%"></td>
+                    <td contenteditable="true" style="width:33.3%"></td>
+                    <td contenteditable="true" style="width:33.3%"></td>
+                </tr>
+            </tbody>
+        </table>
+
+
+
+        <table class="proposedWork" width="100%" style="margin-top:20px">
+            <thead>
+                <th>QUANTITY</th>
+                <th>PRODUCT/SERVICES</th>
+                <th>DESCRIPTION</th>
+                <th>UNIT-PRICE</th>
+                <th class="amountColumn">TOTAL COST</th>
+                <th class="docEdit trAdd">+</th>
+            </thead>
+            <tbody>
+                <tr>
+                    <td contenteditable="true">1</td>
+                    <td class="unit" contenteditable="true"></td>
+                    <td contenteditable="true" class="description"></td>
+                    <td class="amount" contenteditable="true">0</td>
+                    <td class="amount amountColumn rowTotal" contenteditable="true">0</td>
+                    <td class="docEdit tdDelete">X</td>
+                </tr>
+            </tbody>
+            <tfoot>
+                <tr>
+                    <td style="border:none"></td>
+                    <td style="border:none"></td>
+                    <td style="border:none"></td>
+                    <td style="border:none;text-align:right">Sub Total:</td>
+                    <td class="amount subtotal">0.00</td>
+                    <td class="docEdit"></td>
+                </tr>
+                <!-- <tr>
+                    <td style="border:none"></td>
+                    <td style="border:none"></td>
+                    <td style="border:none"></td>
+                    <td style="border:none;text-align:right">Gross Earnings:</td>
+                    <td class="amount" contenteditable="true">0.00</td>
+                    <td class="docEdit"></td>
+                </tr> -->
+                <!-- <tr>
+                    <td style="border:none"></td>
+                    <td style="border:none"></td>
+                    <td style="border:none"></td>
+                    <td style="border:none;text-align:right;white-space:nowrap">Discount:</td>
+                    <td class="amount" contenteditable="true">0.00</td>
+                    <td class="docEdit"></td>
+                </tr> -->
+                <tr>
+                    <td style="border:none"></td>
+                    <td style="border:none"></td>
+                    <td style="border:none"></td>
+                    <td style="border:none;text-align:right;color: red;">TOTAL:</td>
+                    <td class="total amount" contenteditable="true">0.00</td>
+                    <td class=" docEdit"></td>
+                </tr>
+            </tfoot>
+        </table>
+
+
+
+        <table width="100%">
+            <tbody>
+                <tr>
+                    <td width="50%" style="vertical-align:top">
+                        <table style="width:100%">
+                            <tbody>
+                                <tr>
+                                    <td style="text-align:left">
+                                        <p> <i> 1. Please note that this purchase order must be approved by the Procurement Unit. </i> </p>
+                                        <p><i> 2. Ensure this purchase order is in accordance with the prices, terms, delivery, and specifications listed above.,</i> </p>
+                                        <p><i> 3. Please notify us immediately if you are unable to deliver purchased goods as specified. </i>                               </p>
+
+                                        <p style="padding-left:20px; font-size: 13px;">
+                                           Lagos State University, Ojo, Lagos State <br>
+                                           Procurement Unit <br>
+                                            <br>
+                                           
+                                           
+                                        </p>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </td>
+                    <td style="padding-left:40px; width:50%; vertical-align:top">
+                        <table style="width:100%">
+                            <tbody>
+                                <tr>
+                                    <td style="text-align:left">
+                                        <strong>Notes to supplier:</strong>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td contenteditable="true" style="text-align:left; border: 1px solid #000">
+                                        Please ensure all goods are supplied in good quality to the delivery location 
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td style="padding-top:60px">
+                                        Authorized by: _____________________________ <br>
+                                        <br>
+                                        Date: ______________________________________
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        </div>
+
+        
+    </div>   
+</div>
+    <br>
+    <button onclick="createPurchaseOrder()" id="btn-print-this" class="btn btn-success bg-lg"> Generate Purchase Order</button>
+
+
+        
+
+
+{% endblock %}
